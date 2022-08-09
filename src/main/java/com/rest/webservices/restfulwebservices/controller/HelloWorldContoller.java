@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rest.webservices.restfulwebservices.services.HelloWorldBean;
+
 @RestController
 public class HelloWorldContoller {
 
@@ -16,6 +18,11 @@ public class HelloWorldContoller {
 	@GetMapping(path = "/helloWorldUsingGet")
 	public String getMessage() {
 		return "Hello world using @GetMapping";
+	}
+	
+	@GetMapping(path = "/hello-world-bean")
+	public HelloWorldBean helloWorldBean() {
+		return new HelloWorldBean("Hello World Bean");
 	}
 	
 }
