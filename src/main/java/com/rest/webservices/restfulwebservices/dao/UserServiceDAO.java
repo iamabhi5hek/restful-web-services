@@ -11,5 +11,7 @@ public interface UserServiceDAO {
 	public UserFactory save(UserFactory user);
 	
 	public UserFactory findOne(int userId);
+	
+	public UserFactory deleteById(int userId);
 
 }

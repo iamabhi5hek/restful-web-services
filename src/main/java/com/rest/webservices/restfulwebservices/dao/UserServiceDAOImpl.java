@@ -2,6 +2,7 @@ package com.rest.webservices.restfulwebservices.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -41,6 +42,20 @@ public class UserServiceDAOImpl implements UserServiceDAO{
 			if(user.getId() == userId)
 				return user;
 		}
+		return null;
+	}
+
+	@Override
+	public UserFactory deleteById(int userId) {
+		
+		Iterator<UserFactory> itr = users.iterator();
+		
+		while(itr.hasNext()) {
+			UserFactory user = itr.next();
+			if(user.getId() == userId)
+				itr.remove();
+				return user;
+		}		
 		return null;
 	}
 	
