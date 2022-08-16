@@ -9,12 +9,11 @@ public class UserFactory {
 	
 	private Integer id;
 	
-	@Size(min = 2)
+	@Size(min = 2, message = "Name should have atleast 2 characters")
 	private String name;
 	
 	@Past
 	private Date birthDate;
-	
 	
 	public UserFactory(Integer id, String name, Date birthDate) {
 		super();
